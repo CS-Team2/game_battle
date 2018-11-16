@@ -7,7 +7,7 @@ struct param
 	int life, attack, magic;
 };
 
-void act(struct param* actor, struct param* target, int command)
+void act1(struct param* actor, struct param* target, int command)
 {
 	int point;
 	switch (command)
@@ -43,10 +43,10 @@ int main(void)
 		//printf("(0) Attack\n(1) MagicAttack\n(2) Heal\n");
 		//printf("Command:");
 		//scanf("%d", &command);
-		if (you.life > 25 || enemy.life <= 20) {
+		if (you.life > 25 || enemy.life <= you.attack) {
 			command = 0;
 		}
-		else if (you.life <= 25 && enemy.life < 20) {
+		else if (you.life <= 25 && enemy.life > you.attack) {
 			command = 2;
 		}
 		act(&you, &enemy, command);
