@@ -49,13 +49,13 @@ int main(void)
 		else if (you.life <= 25 && enemy.life > you.attack) {
 			command = 2;
 		}
-		act(&you, &enemy, command);
+		act1(&you, &enemy, command);
 		if (enemy.life <= 0)
 		{
 			printf("%s is defeated!\n", enemy.name);
 			return 0;
 		}
-		act(&enemy, &you, 0);
+		act1(&enemy, &you, 0);
 		if (you.life <= 0)
 		{
 			printf("%s has been killed...\n", you.name);
